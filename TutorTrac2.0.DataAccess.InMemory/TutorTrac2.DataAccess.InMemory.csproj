@@ -44,6 +44,7 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StudentAppointmentRepository.cs" />
+    <Compile Include="TutorAppointmentRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\TutorTrac2.0.core\TutorTrac2.core.csproj">

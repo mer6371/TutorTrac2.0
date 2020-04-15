@@ -171,6 +171,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\StudentAppointmentController.cs" />
+    <Compile Include="Controllers\TutorAppointmentController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -240,6 +241,10 @@
     <Content Include="Views\StudentAppointment\Create.cshtml" />
     <Content Include="Views\StudentAppointment\Edit.cshtml" />
     <Content Include="Views\StudentAppointment\Delete.cshtml" />
+    <Content Include="Views\TutorAppointment\Index.cshtml" />
+    <Content Include="Views\TutorAppointment\Create.cshtml" />
+    <Content Include="Views\TutorAppointment\Edit.cshtml" />
+    <Content Include="Views\TutorAppointment\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
