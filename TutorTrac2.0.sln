@@ -3,17 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29806.167
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TutorTrac2.0.core", "TutorTrac2.0.core\TutorTrac2.0.core.csproj", "{140FE090-3370-4B65-81A7-1C2B7DD8B554}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TutorTrac2.core", "TutorTrac2.0.core\TutorTrac2.core.csproj", "{140FE090-3370-4B65-81A7-1C2B7DD8B554}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TutorTrac2.0.services", "TutorTrac2.0.services\TutorTrac2.0.services.csproj", "{59ED6CF3-6B6C-41D3-8B49-B73B22A7C151}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TutorTrac2.services", "TutorTrac2.0.services\TutorTrac2.services.csproj", "{59ED6CF3-6B6C-41D3-8B49-B73B22A7C151}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TutorTrac2.0.DataAccess.SQL", "TutorTrac2.0.DataAccess.SQL\TutorTrac2.0.DataAccess.SQL.csproj", "{03205380-475B-4D3E-9FD8-BDA7163198A4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TutorTrac2.DataAccess.SQL", "TutorTrac2.0.DataAccess.SQL\TutorTrac2.DataAccess.SQL.csproj", "{03205380-475B-4D3E-9FD8-BDA7163198A4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TutorTrac2.0.DataAccess.InMemory", "TutorTrac2.0.DataAccess.InMemory\TutorTrac2.0.DataAccess.InMemory.csproj", "{E11AEAF0-1D10-4790-ABDD-9FA6D966BC5F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TutorTrac2.DataAccess.InMemory", "TutorTrac2.0.DataAccess.InMemory\TutorTrac2.DataAccess.InMemory.csproj", "{E11AEAF0-1D10-4790-ABDD-9FA6D966BC5F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TutorTrac2.0.WebUI", "TutorTrac2.0.WebUI\TutorTrac2.0.WebUI.csproj", "{69CFE976-98E1-4F79-988E-7D81C4F3AA14}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TutorTrac2.WebUI", "TutorTrac2.0.WebUI\TutorTrac2.WebUI.csproj", "{69CFE976-98E1-4F79-988E-7D81C4F3AA14}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TutorTrac2.0.WebUI.Tests", "TutorTrac2.0.WebUI.Tests\TutorTrac2.0.WebUI.Tests.csproj", "{1271E059-8E78-49BD-A8B5-BDF7FA73DACD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TutorTrac2.WebUI.Tests", "TutorTrac2.0.WebUI.Tests\TutorTrac2.WebUI.Tests.csproj", "{1271E059-8E78-49BD-A8B5-BDF7FA73DACD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

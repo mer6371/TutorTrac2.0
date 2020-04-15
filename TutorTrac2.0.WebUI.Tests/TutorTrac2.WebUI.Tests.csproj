@@ -99,9 +99,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\TutorTrac2.0.WebUI\TutorTrac2.0.WebUI.csproj">
+    <ProjectReference Include="..\TutorTrac2.0.WebUI\TutorTrac2.WebUI.csproj">
       <Project>{69CFE976-98E1-4F79-988E-7D81C4F3AA14}</Project>
-      <Name>TutorTrac2.0.WebUI</Name>
+      <Name>TutorTrac2.WebUI</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
