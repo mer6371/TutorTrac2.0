@@ -1,0 +1,35 @@
+﻿@model IEnumerable<TutorTrac2.core.Models.ClassGrouping>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Classes</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Class_Code)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Class_Title)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Class_Code)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Class_Title)
+        </td>
+        <td>
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) 
+        </td>
+    </tr>
+}
+
+</table>

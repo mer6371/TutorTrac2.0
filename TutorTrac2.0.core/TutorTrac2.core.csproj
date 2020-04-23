@@ -41,9 +41,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\ClassGrouping.cs" />
+    <Compile Include="Models\ClassTutors.cs" />
     <Compile Include="Models\StudentAppointment.cs" />
     <Compile Include="Models\StudentSchedule.cs" />
     <Compile Include="Models\TutorAppointment.cs" />
+    <Compile Include="Models\Tutors.cs" />
     <Compile Include="Models\TutorSchedule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
