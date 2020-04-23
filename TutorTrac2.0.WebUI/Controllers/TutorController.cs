@@ -24,5 +24,27 @@ namespace TutorTrac2.WebUI.Controllers
             return View(tutors);
         }
 
+        public ActionResult Create()
+        {
+            Tutors tutor = new Tutors();
+            return View(tutor);
+        }
+
+        [HttpPost]
+        public ActionResult Create(Tutors tutor)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(tutor);
+            }
+            else
+            {
+                context.Insert(tutor);
+                context.Commit();
+
+                return RedirectToAction("Index");
+            }
+        }
+
     }
 }

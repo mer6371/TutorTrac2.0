@@ -259,6 +259,7 @@
     <Content Include="Views\TutorSchedule\Delete.cshtml" />
     <Content Include="Views\ClassGrouping\Index.cshtml" />
     <Content Include="Views\Tutor\Index.cshtml" />
+    <Content Include="Views\Tutor\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

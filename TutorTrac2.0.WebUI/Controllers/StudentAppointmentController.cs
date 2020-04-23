@@ -4,17 +4,22 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using TutorTrac2.core.Models;
+using TutorTrac2.core.ViewModels;
 using TutorTrac2.DataAccess.InMemory;
 
 namespace TutorTrac2.WebUI.Controllers
 {
-    public class StudentAppointmentController : Controller
+    public class StudentAppointmentController : Controller  
     {
         StudentAppointmentRepository context;
+        TutorRepository tutors;
+        ClassRepository classes;
 
         public StudentAppointmentController()
         {
             context = new StudentAppointmentRepository();
+            tutors = new TutorRepository();
+            classes = new ClassRepository();
         }
 
         //Get: StudentAppointmentManager
@@ -26,8 +31,12 @@ namespace TutorTrac2.WebUI.Controllers
 
         public ActionResult Create()
         {
-            StudentAppointment studentAppointment = new StudentAppointment();
-            return View(studentAppointment);
+            TutorViewModel viewModel = new TutorViewModel();
+
+            viewModel.StudentAppointment = new StudentAppointment();
+            viewModel.Tutors = tutors.Collection();
+            viewModel.ClassGroupings = classes.Collection();
+            return View(viewModel);
         }
 
         [HttpPost]
@@ -55,7 +64,11 @@ namespace TutorTrac2.WebUI.Controllers
             }
             else
             {
-                return View(studentAppointment);
+                TutorViewModel viewModel = new TutorViewModel();
+                viewModel.StudentAppointment = studentAppointment;
+                viewModel.Tutors = tutors.Collection();
+                viewModel.ClassGroupings = classes.Collection();
+                return View(viewModel);
             }
         }
 
@@ -74,8 +87,8 @@ namespace TutorTrac2.WebUI.Controllers
                     return View(studentAppointment);
                 }
 
-                studentAppointmentToEdit.tut_fname = studentAppointment.tut_fname;
-                studentAppointmentToEdit.tut_lname = studentAppointment.tut_lname;
+                studentAppointmentToEdit.tut_f_name = studentAppointment.tut_f_name;
+                studentAppointmentToEdit.tut_l_name = studentAppointment.tut_l_name;
                 studentAppointmentToEdit.dateTime = studentAppointment.dateTime;
                 studentAppointmentToEdit.ses_class = studentAppointment.ses_class;
 

@@ -12,10 +12,10 @@ namespace TutorTrac2.core.Models
         public string Id { get; set; }
 
         [DisplayName("Tutor First Name")]
-        public string tut_fname { get; set; }
+        public string tut_f_name { get; set; }
 
         [DisplayName("Tutor Last Name")]
-        public string tut_lname { get; set; }
+        public string tut_l_name { get; set; }
 
         [DisplayName("Date & Time")]
         public DateTime dateTime { get; set; }

@@ -8,7 +8,7 @@ using TutorTrac2.DataAccess.InMemory;
 
 namespace TutorTrac2.WebUI.Controllers
 {
-    public class StudentScheduleController : Controller
+    public class StudentScheduleController : Controller 
     {
         StudentScheduleRepository context;
 
