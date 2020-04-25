@@ -10,11 +10,11 @@ namespace TutorTrac2.WebUI.Controllers
 {
     public class ClassGroupingController : Controller
     {
-        ClassRepository context;
+        InMemoryRepository<ClassGrouping> context;
 
         public ClassGroupingController()
         {
-            context = new ClassRepository();
+            context = new InMemoryRepository<ClassGrouping>();
         }
 
         //Get: ClassManager

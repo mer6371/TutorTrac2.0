@@ -10,11 +10,11 @@ namespace TutorTrac2.WebUI.Controllers
 {
     public class TutorAppointmentController : Controller
     {
-        TutorAppointmentRepository context;
+        InMemoryRepository<TutorAppointment> context;
 
         public TutorAppointmentController()
         {
-            context = new TutorAppointmentRepository();
+            context = new InMemoryRepository<TutorAppointment>();
         }
 
         //Get: TutorAppointmentManager
@@ -108,7 +108,7 @@ namespace TutorTrac2.WebUI.Controllers
             }
             else
             {
-                context.delete(Id);
+                context.Delete(Id);
                 context.Commit();
                 return RedirectToAction("Index");
             }

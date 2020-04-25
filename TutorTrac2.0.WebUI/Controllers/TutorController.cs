@@ -10,11 +10,11 @@ namespace TutorTrac2.WebUI.Controllers
 {
     public class TutorController : Controller
     {
-        TutorRepository context;
+        InMemoryRepository<Tutors> context;
 
         public TutorController()
         {
-            context = new TutorRepository();
+            context = new InMemoryRepository<Tutors>();
         }
 
         //Get: TutorManager

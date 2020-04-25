@@ -11,15 +11,15 @@ namespace TutorTrac2.WebUI.Controllers
 {
     public class StudentAppointmentController : Controller  
     {
-        StudentAppointmentRepository context;
-        TutorRepository tutors;
-        ClassRepository classes;
+        InMemoryRepository<StudentAppointment> context;
+        InMemoryRepository<Tutors> tutors;
+        InMemoryRepository<ClassGrouping> classes;
 
         public StudentAppointmentController()
         {
-            context = new StudentAppointmentRepository();
-            tutors = new TutorRepository();
-            classes = new ClassRepository();
+            context = new InMemoryRepository<StudentAppointment>();
+            tutors = new InMemoryRepository<Tutors>();
+            classes = new InMemoryRepository<ClassGrouping>();
         }
 
         //Get: StudentAppointmentManager
@@ -121,7 +121,7 @@ namespace TutorTrac2.WebUI.Controllers
             }
             else
             {
-                context.delete(Id);
+                context.Delete(Id);
                 context.Commit();
                 return RedirectToAction("Index");
             }

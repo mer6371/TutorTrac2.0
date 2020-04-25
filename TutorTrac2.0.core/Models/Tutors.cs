@@ -7,9 +7,8 @@ using System.Threading.Tasks;
 
 namespace TutorTrac2.core.Models
 {
-    public class Tutors
+    public class Tutors : BaseEntity
     {
-        public string Id { get; set; }
         [DisplayName("First Name")]
         public string tut_f_name { get; set; }
         [DisplayName("Last Name")]
@@ -17,9 +16,6 @@ namespace TutorTrac2.core.Models
         [DisplayName("Email")]
         public string tut_email { get; set; }
 
-        public Tutors()
-        {
-            this.Id = Guid.NewGuid().ToString();
-        }
+        
     }
 }

@@ -7,17 +7,11 @@ using System.Threading.Tasks;
 
 namespace TutorTrac2.core.Models
 {
-    public class TutorSchedule
+    public class TutorSchedule : BaseEntity
     {
-        public string Id { get; set; }
         [DisplayName("Day")]
         public DayOfWeek day { get; set; }
         [DisplayName("Time")]
         public string time { get; set; }
-
-        public TutorSchedule()
-        {
-            this.Id = Guid.NewGuid().ToString();
-        }
     }
 }

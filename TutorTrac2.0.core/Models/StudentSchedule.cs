@@ -7,10 +7,8 @@ using System.Threading.Tasks;
 
 namespace TutorTrac2.core.Models
 {
-    public class StudentSchedule
+    public class StudentSchedule : BaseEntity
     {
-        public string Id { get; set; }
-
         [DisplayName("Class Code")]
         public string c_code { get; set; }
         [DisplayName("Professor")]
@@ -22,9 +20,5 @@ namespace TutorTrac2.core.Models
         [DisplayName("Room")]
         public string room { get; set; }
 
-        public StudentSchedule()
-        {
-            this.Id = Guid.NewGuid().ToString();
-        }
     }
 }
