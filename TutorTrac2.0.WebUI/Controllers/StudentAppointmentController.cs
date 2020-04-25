@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using TutorTrac2.core.Contracts;
 using TutorTrac2.core.Models;
 using TutorTrac2.core.ViewModels;
 using TutorTrac2.DataAccess.InMemory;
@@ -11,15 +12,15 @@ namespace TutorTrac2.WebUI.Controllers
 {
     public class StudentAppointmentController : Controller  
     {
-        InMemoryRepository<StudentAppointment> context;
-        InMemoryRepository<Tutors> tutors;
-        InMemoryRepository<ClassGrouping> classes;
+        IRepository<StudentAppointment> context;
+        IRepository<Tutors> tutors;
+        IRepository<ClassGrouping> classes;
 
-        public StudentAppointmentController()
+        public StudentAppointmentController(IRepository<StudentAppointment> studentAppointmentContext, IRepository<Tutors> tutorsContext, IRepository<ClassGrouping> classGroupingContext)
         {
-            context = new InMemoryRepository<StudentAppointment>();
-            tutors = new InMemoryRepository<Tutors>();
-            classes = new InMemoryRepository<ClassGrouping>();
+            context = studentAppointmentContext;
+            tutors = tutorsContext;
+            classes = classGroupingContext;
         }
 
         //Get: StudentAppointmentManager

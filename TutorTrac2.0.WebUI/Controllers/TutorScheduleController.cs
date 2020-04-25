@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using TutorTrac2.core.Contracts;
 using TutorTrac2.core.Models;
 using TutorTrac2.DataAccess.InMemory;
 
@@ -10,11 +11,11 @@ namespace TutorTrac2.WebUI.Controllers
 {
     public class TutorScheduleController : Controller
     {
-        InMemoryRepository<TutorSchedule> context;
+        IRepository<TutorSchedule> context;
 
-        public TutorScheduleController()
+        public TutorScheduleController(IRepository<TutorSchedule> tutorScheduleContext)
         {
-            context = new InMemoryRepository<TutorSchedule>();
+            context = tutorScheduleContext;
         }
 
         //Get: TutorScheduleManager
