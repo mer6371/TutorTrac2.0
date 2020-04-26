@@ -6,15 +6,10 @@ using System.Threading.Tasks;
 
 namespace TutorTrac2.core.Models
 {
-    public class ClassTutors
-    {
-        public string Id { get; set; }
+    public class ClassTutors : BaseEntity
+    { 
         public string Class_Code { get; set; }
         public string tut_id { get; set; }
 
-        public ClassTutors()
-        {
-            this.Id = Guid.NewGuid().ToString();
-        }
     }
 }

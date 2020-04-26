@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using TutorTrac2.core.Contracts;
 using TutorTrac2.core.Models;
+using TutorTrac2.core.ViewModels;
 using TutorTrac2.DataAccess.InMemory;
 
 namespace TutorTrac2.WebUI.Controllers
@@ -19,9 +20,11 @@ namespace TutorTrac2.WebUI.Controllers
         }
 
         //Get: ClassManager
-        public ActionResult Index()
+        public ActionResult Index(string c_code = null)
         {
             List<ClassGrouping> classGroupings = context.Collection().ToList();
+            
+
             return View(classGroupings);
         }
 

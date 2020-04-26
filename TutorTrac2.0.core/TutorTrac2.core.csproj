@@ -61,6 +61,7 @@
     <Compile Include="Models\Tutors.cs" />
     <Compile Include="Models\TutorSchedule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\ClassListViewModel.cs" />
     <Compile Include="ViewModels\ClassViewModel.cs" />
     <Compile Include="ViewModels\TutorViewModel.cs" />
   </ItemGroup>
