@@ -1,0 +1,49 @@
+﻿@model TutorTrac2.core.Models.Tutors
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Tutors</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.tut_f_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tut_f_name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tut_l_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tut_l_name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tut_email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tut_email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Schedule)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Schedule)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Back to List", "Index")
+</p>

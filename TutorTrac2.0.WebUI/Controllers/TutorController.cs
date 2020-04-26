@@ -43,6 +43,19 @@ namespace TutorTrac2.WebUI.Controllers
             return View(model);
         }
 
+        public ActionResult Details(string Id)
+        {
+            Tutors tutors = context.Find(Id);
+            if (tutors == null)
+            {
+                return HttpNotFound();
+            }
+            else
+            {
+                return View(tutors);
+            }
+        }
+
         public ActionResult Create()
         {
             Tutors tutor = new Tutors();

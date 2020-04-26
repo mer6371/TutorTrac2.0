@@ -282,6 +282,7 @@
     <Content Include="Views\Tutor\Create.cshtml" />
     <Content Include="Views\ClassGrouping\Create.cshtml" />
     <Content Include="Views\ClassGrouping\Details.cshtml" />
+    <Content Include="Views\Tutor\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
