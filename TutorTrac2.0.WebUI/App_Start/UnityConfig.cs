@@ -51,6 +51,7 @@ namespace TutorTrac2._0.WebUI
             container.RegisterType<IRepository<TutorAppointment>, SQLRepository<TutorAppointment>>();
             container.RegisterType<IRepository<Tutors>, SQLRepository<Tutors>>();
             container.RegisterType<IRepository<TutorSchedule>, SQLRepository<TutorSchedule>>();
+            container.RegisterType<IRepository<Students>, SQLRepository<Students>>();
         }
     }
 }

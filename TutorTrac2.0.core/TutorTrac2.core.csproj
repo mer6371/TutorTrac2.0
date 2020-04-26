@@ -56,6 +56,7 @@
     <Compile Include="Models\ClassGrouping.cs" />
     <Compile Include="Models\ClassTutors.cs" />
     <Compile Include="Models\StudentAppointment.cs" />
+    <Compile Include="Models\Students.cs" />
     <Compile Include="Models\StudentSchedule.cs" />
     <Compile Include="Models\TutorAppointment.cs" />
     <Compile Include="Models\Tutors.cs" />

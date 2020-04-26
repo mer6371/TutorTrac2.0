@@ -22,5 +22,6 @@ namespace TutorTrac2.DataAccess.SQL
         public DbSet<TutorAppointment> TutorAppointments { get; set; }
         public DbSet<Tutors> Tutors { get; set; }
         public DbSet<TutorSchedule> TutorSchedules { get; set; }
+        public DbSet<Students> Students { get; set; }
     }
 }

@@ -9,6 +9,8 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using TutorTrac2._0.WebUI.Models;
+using TutorTrac2.core.Contracts;
+using TutorTrac2.core.Models;
 
 namespace TutorTrac2._0.WebUI.Controllers
 {
@@ -17,15 +19,11 @@ namespace TutorTrac2._0.WebUI.Controllers
     {
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
+        private IRepository<Students> studentsRepository;
 
-        public AccountController()
+        public AccountController(IRepository<Students> studentsRepository )
         {
-        }
-
-        public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager )
-        {
-            UserManager = userManager;
-            SignInManager = signInManager;
+            this.studentsRepository = studentsRepository;
         }
 
         public ApplicationSignInManager SignInManager
@@ -155,6 +153,18 @@ namespace TutorTrac2._0.WebUI.Controllers
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
+                    //register the student model
+                    Students students = new Students()
+                    {
+                        Email = model.Email,
+                        FirstName = model.FirstName,
+                        LastName = model.LastName,
+                        UserId = user.Id
+                    };
+
+                    studentsRepository.Insert(students);
+                    studentsRepository.Commit();
+
                     await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
                     
                     // For more information on how to enable account confirmation and password reset please visit https://go.microsoft.com/fwlink/?LinkID=320771
@@ -163,7 +173,7 @@ namespace TutorTrac2._0.WebUI.Controllers
                     // var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
                     // await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
 
-                    return RedirectToAction("Index", "Home");
+                    return RedirectToAction("Index", "StudentAppointment");
                 }
                 AddErrors(result);
             }
