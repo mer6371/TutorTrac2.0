@@ -2,6 +2,7 @@ using System;
 using TutorTrac2.core.Contracts;
 using TutorTrac2.core.Models;
 using TutorTrac2.DataAccess.InMemory;
+using TutorTrac2.DataAccess.SQL;
 using Unity;
 
 namespace TutorTrac2._0.WebUI
@@ -44,12 +45,12 @@ namespace TutorTrac2._0.WebUI
 
             // TODO: Register your type's mappings here.
             // container.RegisterType<IProductRepository, ProductRepository>();
-            container.RegisterType<IRepository<ClassGrouping>, InMemoryRepository<ClassGrouping>>();
-            container.RegisterType<IRepository<StudentAppointment>, InMemoryRepository<StudentAppointment>>();
-            container.RegisterType<IRepository<StudentSchedule>, InMemoryRepository<StudentSchedule>>();
-            container.RegisterType<IRepository<TutorAppointment>, InMemoryRepository<TutorAppointment>>();
-            container.RegisterType<IRepository<Tutors>, InMemoryRepository<Tutors>>();
-            container.RegisterType<IRepository<TutorSchedule>, InMemoryRepository<TutorSchedule>>();
+            container.RegisterType<IRepository<ClassGrouping>, SQLRepository<ClassGrouping>>();
+            container.RegisterType<IRepository<StudentAppointment>, SQLRepository<StudentAppointment>>();
+            container.RegisterType<IRepository<StudentSchedule>, SQLRepository<StudentSchedule>>();
+            container.RegisterType<IRepository<TutorAppointment>, SQLRepository<TutorAppointment>>();
+            container.RegisterType<IRepository<Tutors>, SQLRepository<Tutors>>();
+            container.RegisterType<IRepository<TutorSchedule>, SQLRepository<TutorSchedule>>();
         }
     }
 }

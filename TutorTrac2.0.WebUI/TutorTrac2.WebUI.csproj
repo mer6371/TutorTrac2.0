@@ -280,6 +280,7 @@
     <Content Include="Views\ClassGrouping\Index.cshtml" />
     <Content Include="Views\Tutor\Index.cshtml" />
     <Content Include="Views\Tutor\Create.cshtml" />
+    <Content Include="Views\ClassGrouping\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -305,6 +306,10 @@
     <ProjectReference Include="..\TutorTrac2.0.DataAccess.InMemory\TutorTrac2.DataAccess.InMemory.csproj">
       <Project>{E11AEAF0-1D10-4790-ABDD-9FA6D966BC5F}</Project>
       <Name>TutorTrac2.DataAccess.InMemory</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TutorTrac2.0.DataAccess.SQL\TutorTrac2.DataAccess.SQL.csproj">
+      <Project>{03205380-475B-4D3E-9FD8-BDA7163198A4}</Project>
+      <Name>TutorTrac2.DataAccess.SQL</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

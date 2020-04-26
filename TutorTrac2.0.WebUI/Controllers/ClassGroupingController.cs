@@ -24,5 +24,27 @@ namespace TutorTrac2.WebUI.Controllers
             List<ClassGrouping> tutors = context.Collection().ToList();
             return View(tutors);
         }
+
+        public ActionResult Create()
+        {
+            ClassGrouping classGrouping = new ClassGrouping();
+            return View(classGrouping);
+        }
+
+        [HttpPost]
+        public ActionResult Create(ClassGrouping classGrouping)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(classGrouping);
+            }
+            else
+            {
+                context.Insert(classGrouping);
+                context.Commit();
+
+                return RedirectToAction("Index");
+            }
+        }
     }
 }
