@@ -1,0 +1,42 @@
+﻿@model TutorTrac2.core.Models.ClassGrouping
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Class Details</h2>
+
+<div>
+    <h4>Class</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Class_Code)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Class_Code)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Class_Title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Class_Title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Class_Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Class_Description)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

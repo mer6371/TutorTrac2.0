@@ -13,6 +13,8 @@ namespace TutorTrac2.core.Models
         public string Class_Code { get; set; }
         [DisplayName("Class Title")]
         public string Class_Title { get; set; }
+        [DisplayName("Class Description")]
+        public string Class_Description { get; set; }
 
         
     }

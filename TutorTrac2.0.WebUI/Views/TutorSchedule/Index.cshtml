@@ -4,11 +4,10 @@
     ViewBag.Title = "Index";
 }
 
-<h2>My Schedule</h2>
+<h2>Schedule</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
+
+
 <table class="table">
     <tr>
         <th>
@@ -21,18 +20,16 @@
     </tr>
 
 @foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.day)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.time)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id = item.Id })
-        </td>
-    </tr>
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.day)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.time)
+    </td>
+    
+
+</tr>
 }
 
 </table>

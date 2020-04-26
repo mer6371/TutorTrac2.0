@@ -21,8 +21,21 @@ namespace TutorTrac2.WebUI.Controllers
         //Get: ClassManager
         public ActionResult Index()
         {
-            List<ClassGrouping> tutors = context.Collection().ToList();
-            return View(tutors);
+            List<ClassGrouping> classGroupings = context.Collection().ToList();
+            return View(classGroupings);
+        }
+
+        public ActionResult Details(string Id)
+        {
+            ClassGrouping classGrouping = context.Find(Id);
+            if (classGrouping == null)
+            {
+                return HttpNotFound();
+            }
+            else
+            {
+                return View(classGrouping);
+            }
         }
 
         public ActionResult Create()
