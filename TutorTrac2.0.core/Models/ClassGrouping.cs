@@ -15,6 +15,7 @@ namespace TutorTrac2.core.Models
         public string Class_Title { get; set; }
         [DisplayName("Class Description")]
         public string Class_Description { get; set; }
+        public string tut_id { get; set; }
 
         
     }

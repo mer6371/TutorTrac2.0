@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using TutorTrac2.core.Contracts;
 using TutorTrac2.core.Models;
+using TutorTrac2.core.ViewModels;
 using TutorTrac2.DataAccess.InMemory;
 
 namespace TutorTrac2.WebUI.Controllers
@@ -12,17 +13,34 @@ namespace TutorTrac2.WebUI.Controllers
     public class TutorController : Controller
     {
         IRepository<Tutors> context;
+        IRepository<ClassGrouping> classes;
 
-        public TutorController(IRepository<Tutors> tutorContext)
+        public TutorController(IRepository<Tutors> tutorContext, IRepository<ClassGrouping> classGroupingContext)
         {
             context = tutorContext;
+            classes = classGroupingContext;
         }
 
         //Get: TutorManager
-        public ActionResult Index()
+        public ActionResult Index(string Class_Code = null)
         {
-            List<Tutors> tutors = context.Collection().ToList();
-            return View(tutors);
+            List<Tutors> tutors;
+            List<ClassGrouping> classGroupings = classes.Collection().ToList();
+
+            if (Class_Code == null)
+            {
+                tutors = context.Collection().ToList();
+            }
+            else
+            {
+                tutors = context.Collection().Where(t => t.Class_Code == Class_Code).ToList();
+            }
+
+            TutorListViewModel model = new TutorListViewModel();
+            model.Tutors = tutors;
+            model.ClassGroupings = classGroupings;
+
+            return View(model);
         }
 
         public ActionResult Create()

@@ -1,4 +1,4 @@
-﻿@model IEnumerable<TutorTrac2.core.Models.Tutors>
+﻿@model TutorTrac2.core.ViewModels.TutorListViewModel
 
 @{
     ViewBag.Title = "Index";
@@ -10,21 +10,33 @@
     @Html.ActionLink("Create New", "Create")
 </p>
 
+<div class="col-md-2">
+    <h4>Filter By Class</h4>
+    <div class="list-group">
+        @Html.ActionLink("All", "Index", null, new { @class = Request["Class_Code"]==null? "list-group-item active" : "list-group-item" })
+        @foreach(var cat in Model.ClassGroupings)
+        {
+            @Html.ActionLink(cat.Class_Code, "Index", new { Class_Code=cat.Class_Code}, new { @class = Request["Class_Code"]==cat.Class_Code? "list-group-item active" : "list-group-item" })
+        }
+    </div>
+</div>
+<div class="col-md-10">
+
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.tut_f_name)
+            Tutor First Name
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.tut_l_name)
+            Tutor Last Name
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.tut_email)
+            Tutor Email
         </th>
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
+@foreach (var item in Model.Tutors) {
     <tr>
         <td>
             @Html.DisplayFor(modelItem => item.tut_f_name)
@@ -36,7 +48,7 @@
             @Html.DisplayFor(modelItem => item.tut_email)
         </td>
         <td>
-            @Html.ActionLink("Schedule", "Index", "TutorSchedule") 
+            @Html.ActionLink("Details", "Details", new { id = item.Id })
         </td>
     </tr>
 }

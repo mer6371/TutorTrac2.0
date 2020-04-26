@@ -15,6 +15,7 @@ namespace TutorTrac2.core.Models
         public string tut_l_name { get; set; }
         [DisplayName("Email")]
         public string tut_email { get; set; }
+        public string Class_Code { get; set; }
 
         
     }

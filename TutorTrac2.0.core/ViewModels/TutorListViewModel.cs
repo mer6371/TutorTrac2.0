@@ -7,9 +7,9 @@ using TutorTrac2.core.Models;
 
 namespace TutorTrac2.core.ViewModels
 {
-    public class ClassListViewModel
+    public class TutorListViewModel
     {
-        public IEnumerable<ClassGrouping> ClassGrouping { get; set; }
-        public IEnumerable<ClassTutors> ClassTutors { get; set; }
+        public IEnumerable<Tutors> Tutors { get; set; }
+        public IEnumerable<ClassGrouping> ClassGroupings { get; set; }
     }
 }
